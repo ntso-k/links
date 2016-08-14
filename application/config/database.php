@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'sqlite:'.APPPATH.'sqlite.db',
+	'hostname' => 'sqlite:'.APPPATH.'db/sqlite.db',
 	'username' => '',
 	'password' => '',
 	'database' => '',
