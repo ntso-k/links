@@ -18,8 +18,11 @@ class Home extends Front_Controller {
 		if (empty($board_id) && count($boards)) {
 			$board_id = $boards[0]->id;
 		}
+
+		$current_board = $this->board_model->get($board_id);
+
 		$links = $this->bookmark_model->get_bookmarks_by_board_id($board_id);
 
-		$this->load->view('home', array('board_id'=>$board_id, 'boards'=>$boards, 'links'=>$links));
+		$this->load->view('home', array('board_id'=>$board_id, 'current_board'=>$current_board, 'boards'=>$boards, 'links'=>$links));
 	}
 }

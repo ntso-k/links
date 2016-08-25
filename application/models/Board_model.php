@@ -30,6 +30,16 @@ class Board_model extends CI_Model {
 		return $query->row();
 	}
 
+	public function delete($id)
+	{
+
+		$this->load->model('bookmark_model');
+		$this->bookmark_model->deleteByBoardId($id);
+
+
+		$this->db->delete(self::TBL_NAME, array('id' => $id));
+	}
+
 	public function get_boards_by_user_id($user_id)
 	{
 		$this->db->where('user_id', $user_id);

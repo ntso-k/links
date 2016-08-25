@@ -55,6 +55,13 @@ class Bookmark extends Front_Controller {
 		echo json_encode(array('status' => 'fail'));
 	}
 
+	public function del($id)
+	{
+		$this->bookmark_model->delete($id);
+		echo json_encode(array('status' => 'success'));
+
+	}
+
 	public function test()
 	{
 		$r = $this->bookmark_model->exist_bookmark(1, 8);

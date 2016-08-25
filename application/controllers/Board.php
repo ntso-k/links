@@ -11,6 +11,13 @@ class Board extends Front_Controller {
 		$this->load->model('board_model');
 	}
 
+	public function index()
+	{
+		$boards = $this->board_model->get_boards_by_user_id($this->user_model->get_user_id());
+
+		$this->load->view('board/list', array('boards'=>$boards));
+	}
+
 	public function create()
 	{
 		$this->load->library('form_validation');
@@ -31,5 +38,11 @@ class Board extends Front_Controller {
 		}
 
 		$this->load->view('board/create');
+	}
+
+	public function delete($id)
+	{
+		$this->board_model->delete($id);
+		redirect('home');
 	}
 }

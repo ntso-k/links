@@ -23,6 +23,7 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['user']->username; ?><span class="caret"></span></a>
 						<ul class="dropdown-menu">
+							<li><a href="/board">Manage Boards</a></li>
 							<li><a href="/board/create">Create Board</a></li>
 							<li role="separator" class="divider"></li>
 							<li><a href="/logout">退出</a></li>

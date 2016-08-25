@@ -30,6 +30,16 @@ class Bookmark_model extends CI_Model {
 		return $query->row();
 	}
 
+	public function delete($id)
+	{
+		$this->db->delete(self::TBL_NAME, array('id' => $id));
+	}
+
+	public function deleteByBoardId($board_id)
+	{
+		$this->db->delete(self::TBL_NAME, array('board_id' => $board_id));
+	}
+
 	public function get_bookmarks_by_board_id($board_id)
 	{
 		$this->db->select('bookmark.*, link.title, link.url, link.icon_url');
